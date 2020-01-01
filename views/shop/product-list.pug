@@ -1,0 +1,18 @@
+extends ../layouts/main-layout.pug
+
+block styles
+    link(rel="stylesheet", href="/css/shop.css")
+
+block content
+    .product-nav
+        if prods.length > 0
+            .display-text The list of products are 
+            each prod in prods
+                .product-display
+                    .product-attr Name #{prod.name}
+                    .product-attr ISBN #{prod.isbn}
+                    .product-attr Author #{prod.author}
+                    .product-attr Description #{prod.description}
+                    .product-attr Image #{prod.image}
+        else
+            .display-text No Products found

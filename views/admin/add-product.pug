@@ -1,0 +1,24 @@
+extends ../layouts/main-layout.pug
+
+block styles
+    link(rel="stylesheet", href="/css/admin.css")
+
+block content
+    .admin
+            form.row(action="/admin/product", method="post")
+                .form-control
+                    label(for="book-name") Name of the Book
+                    input(type="text", name="name" id="book-name")
+                .form-control
+                    label(for="isbn") ISBN
+                    input(type="text", name="isbn" id="isbn")
+                .form-control
+                    label(for="author") Author
+                    input(type="text", name="author" id="author")
+                .form-control
+                    label(for="description") Description
+                    input(type="text", name="description" id="description")
+                .form-control
+                    label(for="image") Image
+                    input(type="text", name="image" id="image")
+                button.btn.btn-primary(type="submit") Add Book

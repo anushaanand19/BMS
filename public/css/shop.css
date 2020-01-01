@@ -1,0 +1,17 @@
+.product-nav {
+  margin: 24px;
+  padding: 12px;
+  text-align: center;
+}
+
+.display-text {
+  margin: 8px;
+  font-weight: bold;
+}
+.product-display {
+  margin: 8px;
+}
+
+.product-attr {
+  padding: 8px 0;
+}
