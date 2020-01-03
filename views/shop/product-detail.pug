@@ -12,3 +12,6 @@ block content
                 .product-attr.labels  Price : ₹#{product.price}
                 .product-attr.labels  Author : #{product.author}
                 .product-attr.labels  #{product.description}
+                form(action="/cart", method="post")
+                            button.btn.btn-success(type="submit") Add to Cart
+                            input(type="hidden", name="prodID" value = `${product.id}`)

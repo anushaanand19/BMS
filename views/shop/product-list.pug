@@ -14,7 +14,8 @@ block content
                         .product-attr.labels  #{prod.description}
                         a(href=`products/${prod.id}`)
                             button.btn.btn-success(type="submit") Details
-                        a(href="admin/edit-product")
+                        form(action="/cart", method="post")
                             button.btn.btn-success(type="submit") Add to Cart
+                            input(type="hidden", name="prodID" value = `${prod.id}`)
         else
             .display-text No Products found

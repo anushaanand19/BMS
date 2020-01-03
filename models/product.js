@@ -1,3 +1,4 @@
+const { uuid } = require("uuidv4");
 const products = [];
 
 module.exports = class Product {
@@ -10,7 +11,7 @@ module.exports = class Product {
   }
 
   save() {
-    this.id = Math.random().toString();
+    this.id = uuid();
     products.push(this);
   }
 

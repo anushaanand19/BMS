@@ -10,7 +10,6 @@ exports.getAddProduct = (req, res, next) => {
 
 exports.getEditProduct = (req, res, next) => {
   const products = Product.fetchAll();
-  console.log("admin", products);
   res.render("admin/products", {
     path: "/admin/product",
     prods: products,

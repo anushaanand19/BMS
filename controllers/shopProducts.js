@@ -31,9 +31,19 @@ exports.shopAllProducts = (req, res, next) => {
 exports.cart = (req, res, next) => {
   const products = Product.fetchAll();
   res.render("shop/cart", {
-    prods: products,
+    product: products,
     path: "/cart",
     pageTitle: "Cart"
+  });
+};
+
+exports.addToCart = (req, res, next) => {
+  const prodID = req.body.prodID;
+  const prod = Product.findByID(prodID);
+  res.render("shop/cart", {
+    product: prod,
+    path: "/cart",
+    pageTitle: "Orders"
   });
 };
 

@@ -2,3 +2,10 @@ extends ../layouts/main-layout.pug
 
 block styles
     link(rel="stylesheet", href="/css/shop.css")
+
+block content
+    .product-nav
+        .products
+            .product-display
+                .product-attr.labels #{product.name} 
+                .product-attr.labels  Price : ₹#{product.price}
