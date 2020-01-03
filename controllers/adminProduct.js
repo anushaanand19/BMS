@@ -19,8 +19,13 @@ exports.getEditProduct = (req, res, next) => {
 };
 
 exports.products = (req, res, next) => {
-  console.log(req.body);
-  const products = new Product(req.body.name);
+  const products = new Product(
+    req.body.name,
+    req.body.price,
+    req.body.author,
+    req.body.description,
+    req.body.image
+  );
   products.save();
   res.redirect("/");
 };

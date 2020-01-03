@@ -1,18 +1,26 @@
 const products = [];
 
 module.exports = class Product {
-  constructor(name, image, price, description) {
+  constructor(name, price, author, description, image) {
     this.name = name;
-    this.image = image;
     this.price = price;
+    this.author = author;
     this.description = description;
+    this.image = image;
   }
 
   save() {
+    this.id = Math.random().toString();
     products.push(this);
   }
 
   static fetchAll() {
     return products;
+  }
+
+  static findByID(id) {
+    const prodID = products.find(p => p.id === id);
+    console.log("prodID", prodID);
+    return prodID;
   }
 };

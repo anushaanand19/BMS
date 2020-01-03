@@ -18,7 +18,8 @@
   color: #333333;
 }
 
-.column input {
+.column input,
+textarea {
   display: block;
   width: 100%;
   padding: 4px;

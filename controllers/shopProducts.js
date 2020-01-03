@@ -2,11 +2,20 @@ const Product = require("../models/product");
 
 exports.index = (req, res, next) => {
   const products = Product.fetchAll();
-  console.log("shop", products);
   res.render("shop/index", {
     prods: products,
     path: "/",
     pageTitle: "Welcome to the Bookstore"
+  });
+};
+
+exports.getProduct = (req, res, next) => {
+  const prodID = req.params.productID;
+  const prod = Product.findByID(prodID);
+  res.render("shop/product-detail", {
+    path: "/products",
+    product: prod,
+    pageTitle: prod.name
   });
 };
 

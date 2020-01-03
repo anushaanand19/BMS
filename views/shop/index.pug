@@ -6,12 +6,15 @@ block styles
 block content
     .product-nav
         if prods.length > 0
-            .display-text The list of products are 
             .products
                 each prod in prods
                     .product-display
                         .product-attr.labels #{prod.name} 
-                        .product-attr.value  #{prod.image}
-                        .product-attr.value  #{prod.description}
+                        img.product-img(src="https://images.unsplash.com/photo-1543978571-499b442e9b4c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1952&q=80", alt="", )
+                        .product-attr.labels  #{prod.description}
+                        a(href=`products/${prod.id}`)
+                            button.btn.btn-success(type="submit") Details
+                        a(href="admin/edit-product")
+                            button.btn.btn-success(type="submit") Add to Cart
         else
             .display-text No Products found

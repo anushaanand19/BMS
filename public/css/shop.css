@@ -1,19 +1,22 @@
 .product-nav {
-  margin: 24px;
-  padding: 12px;
   text-align: center;
 }
 
 .display-text {
-  margin: 8px;
   font-weight: bold;
   display: block;
+  font-size: 16px;
+  margin: 8px;
+  padding: 8px;
+  color: #2c3e50;
 }
 .products {
   display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 .product-display {
-  margin: 8px;
+  margin: 24px;
   padding: 8px 48px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
@@ -25,8 +28,8 @@
 }
 
 .product-img {
-  height: 120px;
-  width: 120px;
+  height: 200px;
+  width: 200px;
 }
 
 .product-attr {
@@ -34,7 +37,12 @@
 }
 .labels {
   font-weight: bold;
+  color: #2c3e50;
 }
 .value {
   font-weight: normal;
+}
+.btn {
+  margin: 8px;
+  padding: 8px 16px;
 }
