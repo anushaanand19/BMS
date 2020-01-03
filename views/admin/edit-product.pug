@@ -1,0 +1,17 @@
+extends ../layouts/main-layout.pug
+
+block styles
+    link(rel="stylesheet", href="/css/admin.css")
+
+block content
+    .product-nav
+        each prod in prods
+            .product-display
+                .product-attr Name #{prod.name}
+                .product-attr ISBN #{prod.isbn}
+                .product-attr Author #{prod.author}
+                .product-attr Description #{prod.description}
+                    .product-attr Image #{prod.image}
+            .column
+                button.btn.btn-primary(type="submit") Edit
+                button.btn.btn-primary(type="submit") Delete 

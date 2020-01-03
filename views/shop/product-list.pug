@@ -7,12 +7,11 @@ block content
     .product-nav
         if prods.length > 0
             .display-text The list of products are 
-            each prod in prods
-                .product-display
-                    .product-attr Name #{prod.name}
-                    .product-attr ISBN #{prod.isbn}
-                    .product-attr Author #{prod.author}
-                    .product-attr Description #{prod.description}
-                    .product-attr Image #{prod.image}
+            .products
+                each prod in prods
+                    .product-display
+                        .product-attr.labels #{prod.name} 
+                        .product-attr.value  #{prod.image}
+                        .product-attr.value  #{prod.description}
         else
             .display-text No Products found

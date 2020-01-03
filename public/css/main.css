@@ -5,7 +5,7 @@ body {
   font-family: "Roboto";
 }
 .header-nav {
-  background-color: #2ecc71;
+  background-color: #5cb85c;
   height: 75px;
   display: flex;
   justify-content: center;
@@ -15,13 +15,12 @@ body {
   align-items: center;
   text-align: center;
 }
-
 .option-item {
-  color: #2c3e50;
-  font-family: "Roboto";
+  color: white;
+  text-transform: uppercase;
 }
 
 .active {
-  color: #c0392b;
+  color: #2c3e50;
   font-weight: bold;
 }

@@ -4,7 +4,7 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
-        title My Shop
+        title #{pageTitle}
         link(rel="stylesheet", href="/css/main.css")
         link(rel="stylesheet" , href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css")
         block styles
@@ -12,14 +12,14 @@ html(lang="en")
         .card.text-center
             .card-header.header-nav
                 ul.nav.nav-pills.header-items
+                    li.nav-item
+                        a.nav-link.option-item(href="/" class=(path === "/" ? 'active' : '')) Shop
                     li.nav-item.option-item
-                        a.nav-link(href="/" class=(path === "/" ? 'active' : '')) Shop
+                        a.nav-link.option-item(href="/products" class=(path === "/product-list" ? 'active' : '')) Products
                     li.nav-item.option-item
-                        a.nav-link(href="/products" class=(path === "/products" ? 'active' : '')) Products
+                        a.nav-link.option-item(href="/cart" class=(path === "/cart" ? 'active' : '')) Cart
                     li.nav-item.option-item
-                        a.nav-link(href="/cart" class=(path === "/cart" ? 'active' : '')) Cart
+                        a.nav-link.option-item(href="/admin/add-product" class=(path=== "/admin/add-product")? 'active' : '' ) Add Product
                     li.nav-item.option-item
-                        a.nav-link(href="/admin/add-product" class=(path=== "/admin/add-product")? 'active' : '' ) Add Product
-                    li.nav-item.option-item
-                        a.nav-link(href="/admin/product" class=(path=== "/admin/product")? 'active' : '' ) Admin Product
+                        a.nav-link.option-item(href="/admin/product" class=(path=== "/admin/product")? 'active' : '' ) Admin Product
         block content           
