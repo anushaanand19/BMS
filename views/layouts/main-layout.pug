@@ -7,19 +7,17 @@ html(lang="en")
         title #{pageTitle}
         link(rel="stylesheet", href="/css/main.css")
         link(rel="stylesheet" , href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css")
+        link(href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet")
         block styles
     body
-        .card.text-center
-            .card-header.header-nav
+        .text-center
+            .header-nav
                 ul.nav.nav-pills.header-items
-                    li.nav-item
-                        a.nav-link.option-item(href="/" class=(path === "/" ? 'active' : '')) Shop
                     li.nav-item.option-item
-                        a.nav-link.option-item(href="/products" class=(path === "/product-list" ? 'active' : '')) Products
-                    li.nav-item.option-item
-                        a.nav-link.option-item(href="/cart" class=(path === "/cart" ? 'active' : '')) Cart
+                        a.nav-link.option-item(href="/" class=(path=== "/")? 'active' : '') Products
                     li.nav-item.option-item
                         a.nav-link.option-item(href="/admin/add-product" class=(path=== "/admin/add-product")? 'active' : '' ) Add Product
                     li.nav-item.option-item
-                        a.nav-link.option-item(href="/admin/product" class=(path=== "/admin/product")? 'active' : '' ) Admin Product
-        block content           
+                        a.nav-link.option-item(href="/admin/products" class=(path=== "/admin/products")? 'active' : '' ) Admin Product
+        .prodcontainer
+            block content           

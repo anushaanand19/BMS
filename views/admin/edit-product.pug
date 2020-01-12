@@ -4,14 +4,24 @@ block styles
     link(rel="stylesheet", href="/css/admin.css")
 
 block content
-    .product-nav
-        each prod in prods
-            .product-display
-                .product-attr Name #{prod.name}
-                .product-attr ISBN #{prod.isbn}
-                .product-attr Author #{prod.author}
-                .product-attr Description #{prod.description}
-                    .product-attr Image #{prod.image}
+    .admin
+        form.row(action="/admin/editproduct", method="post")
             .column
-                button.btn.btn-primary(type="submit") Edit
-                button.btn.btn-primary(type="submit") Delete 
+                label(for="book-name") Name of the Book
+                input(type="text", name="name" id="name" , value = `${prod.name}`)
+            .column
+                label(for="price") Price
+                input(type="text", name="price" id="price" ,value = `${prod.price}`)
+            .column
+                label(for="author") Author
+                input(type="text", name="author" id="author" ,value = `${prod.author}`)
+            .column
+                label.display-text(for="description") Description
+                textarea(name="description", cols="24", rows="4" id="description") #{prod.description}        
+            .column
+                label(for="isbn") ImageURL
+                input(type="text", name="image" id="image" , value = `${prod.image}`)
+                input(type="hidden", name="id", value = `${prod.id}`)
+            .column
+                button.addbtn.btn-success(type="submit") Save
+                    

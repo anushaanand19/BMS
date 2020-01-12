@@ -9,13 +9,11 @@ block content
             .products
                 each prod in prods
                     .product-display
-                        .product-attr.labels #{prod.name} 
-                        img.product-img(src="https://images.unsplash.com/photo-1543978571-499b442e9b4c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1952&q=80", alt="", )
-                        .product-attr.labels  #{prod.description}
-                        a(href=`products/${prod.id}`)
-                            button.btn.btn-success(type="submit") Details
-                        form(action="/cart", method="post")
-                            button.btn.btn-success(type="submit") Add to Cart
-                            input(type="hidden", name="prodID" value = `${prod.id}`)
+                        img.product-img(src=`${prod.image}`, alt="A simple book", )
+                        .productLabel
+                            .prodName #{prod.name} 
+                            .prodDescription  #{prod.description}
+                            a(href=`products/${prod.id}`)
+                                button.btn.btn-success(type="submit") Details
         else
             .display-text No Products found

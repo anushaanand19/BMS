@@ -5,21 +5,26 @@ block styles
 
 block content
     .admin
-        form.row(action="/admin/product", method="post")
-            .column
-                label(for="book-name") Name of the Book
-                input(type="text", name="name" id="name")
-            .column
-                label(for="price") Price
-                input(type="text", name="price" id="price")
-            .column
-                label(for="author") Author
-                input(type="text", name="author" id="author")
-            .column
-                label.display-text(for="description") Description
-                textarea(name="description", cols="24", rows="4" id="description")
-            .column
-                label(for="isbn") ImageURL
-                input(type="text", name="image" id="image")
-            .column
-                button.btn.btn-success(type="submit") Add Book
+        img(src="https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-1.2.1&auto=format&fit=crop&w=1868&q=80", alt="")
+        form.flow-container(action="/admin/product", method="post")
+            .row
+                .column
+                    label(for="book-name") Name of the Book
+                    input.addname(type="text", name="name" id="name")
+                .column
+                    label(for="price") Price
+                    input.addprice(type="text", name="price" id="price")
+                .column
+                    label(for="author") Author
+                    input.addauthor(type="text", name="author" id="author")
+            .row
+                .column.column-full
+                    label.display-text(for="description") Description
+                    textarea.adddesc(name="description", cols="24", rows="4" id="description")
+            .row
+                .column
+                    label(for="isbn") ImageURL
+                    input.addimage(type="text", name="image" id="image")
+            .row
+                .column.column-full
+                    button.addbtn.btn-success(type="submit") Add Book

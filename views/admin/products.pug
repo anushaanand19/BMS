@@ -1,6 +1,7 @@
 extends ../layouts/main-layout.pug
 
 block styles
+    link(rel="stylesheet", href="/css/admin.css")
     link(rel="stylesheet", href="/css/shop.css")
 
 block content
@@ -9,12 +10,14 @@ block content
             .products
                 each prod in prods
                     .product-display
-                        .product-attr.labels #{prod.name} 
-                        img.product-img(src="https://images.unsplash.com/photo-1543978571-499b442e9b4c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1952&q=80", alt="", )
-                        .product-attr.value  #{prod.description}
-                        a(href="admin/edit-product")
-                            button.btn.btn-success(type="submit") Edit
-                        a(href="admin/edit-product")
-                            button.btn.btn-success(type="submit") Delete
+                        img.product-img(src=`${prod.image}`, alt="A simple book", )
+                        .productLabel
+                            .prodName #{prod.name} 
+                            .prodDescription  #{prod.description}
+                            .actions
+                                a(href=`products/edit-product/${prod.id}`)
+                                    button.btn.btn-success(type="submit") Edit
+                                a(href=`products/deleteproduct/${prod.id}`)
+                                    button.btn.btn-success(type="submit") Delete
         else
             .display-text No Products found

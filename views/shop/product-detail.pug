@@ -6,12 +6,10 @@ block styles
 block content
     .product-nav
         .products
-            .product-display
-                .product-attr.labels #{product.name} 
-                img.product-img(src="https://images.unsplash.com/photo-1543978571-499b442e9b4c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1952&q=80", alt="", )
-                .product-attr.labels  Price : ₹#{product.price}
-                .product-attr.labels  Author : #{product.author}
-                .product-attr.labels  #{product.description}
-                form(action="/cart", method="post")
-                            button.btn.btn-success(type="submit") Add to Cart
-                            input(type="hidden", name="prodID" value = `${product.id}`)
+            .detailproductdisplay
+                img.detailImgProd(src=`${product.image}`, alt=`${product.name}` )
+                .product-attr
+                    .prdname #{product.name} 
+                    .prdauthor  by #{product.author}
+                    .detailslabel.prdprice  ₹#{product.price}
+                    .detailslabel.prddescription  #{product.description}
