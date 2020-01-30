@@ -7,9 +7,9 @@ block content
     .product-nav
         .products
             .detailproductdisplay
-                img.detailImgProd(src=`${product.image}`, alt=`${product.name}` )
+                img.detailImgProd(src=`${product.imageURL}`, alt=`${product.name}` )
                 .product-attr
-                    .prdname #{product.name} 
+                    .prdname #{product.title} 
                     .prdauthor  by #{product.author}
                     .detailslabel.prdprice  ₹#{product.price}
                     .detailslabel.prddescription  #{product.description}

@@ -9,11 +9,15 @@ block content
             .products
                 each prod in prods
                     .product-display
-                        img.product-img(src=`${prod.image}`, alt="A simple book", )
+                        img.product-img(src=`${prod.imageURL}`, alt="A simple book", )
                         .productLabel
-                            .prodName #{prod.name} 
+                            .prodName #{prod.title} 
                             .prodDescription  #{prod.description}
                             a(href=`products/${prod.id}`)
                                 button.btn.btn-success(type="submit") Details
+                            form(action="/cart", method="post")
+                                input(type="hidden", name="id", value = `${prod.id}`)
+                                button.btn.btn-success(type="submit") Add to Cart
+                            
         else
             .display-text No Products found

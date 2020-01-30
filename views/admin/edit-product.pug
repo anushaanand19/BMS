@@ -8,7 +8,7 @@ block content
         form.row(action="/admin/editproduct", method="post")
             .column
                 label(for="book-name") Name of the Book
-                input(type="text", name="name" id="name" , value = `${prod.name}`)
+                input(type="text", name="name" id="name" , value = `${prod.title}`)
             .column
                 label(for="price") Price
                 input(type="text", name="price" id="price" ,value = `${prod.price}`)
@@ -20,7 +20,7 @@ block content
                 textarea(name="description", cols="24", rows="4" id="description") #{prod.description}        
             .column
                 label(for="isbn") ImageURL
-                input(type="text", name="image" id="image" , value = `${prod.image}`)
+                input(type="text", name="image" id="image" , value = `${prod.imageURL}`)
                 input(type="hidden", name="id", value = `${prod.id}`)
             .column
                 button.addbtn.btn-success(type="submit") Save
